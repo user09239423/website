@@ -34,7 +34,9 @@ a { color: inherit; }
 
 .brand { display: inline-flex; align-items: center; gap: .7rem; font-weight: 700; text-decoration: none; }
 .brand small { margin-left: .25rem; color: #d6dfcf; font-size: .62em; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; }
-.brand-mark { display: grid; place-items: center; width: 2.2rem; height: 2.2rem; border: 1px solid currentColor; border-radius: 50%; font-family: "Fraunces", serif; font-size: 1.25rem; }
+.brand-mark { position: relative; display: grid; place-items: center; width: 2.2rem; height: 2.2rem; border: 1px solid currentColor; border-radius: 50%; }
+.brand-mark::before { content: ""; width: .72rem; height: 1rem; border: 1.5px solid currentColor; border-radius: 75% 15% 70% 25%; transform: rotate(38deg); }
+.brand-mark::after { content: ""; position: absolute; width: 1px; height: .9rem; background: currentColor; transform: rotate(38deg) translate(.05rem, .1rem); transform-origin: bottom; }
 nav { display: flex; align-items: center; gap: clamp(1rem, 3vw, 2.25rem); }
 nav a { font-size: .9rem; font-weight: 600; text-decoration: none; }
 .nav-cta { padding: .65rem 1rem; border: 1px solid rgba(255,255,255,.55); border-radius: 999px; }
@@ -85,7 +87,8 @@ h2 { margin-bottom: 0; font-size: clamp(3rem, 6.2vw, 6rem); line-height: .94; }
 .hill-front { right: -45%; width: 135%; height: 60%; background: #274d35; transform: rotate(-6deg); }
 .tree { position: absolute; z-index: 2; color: #183925; font-size: 8rem; transform: scaleX(.7); }
 .tree-one { left: 9%; bottom: 20%; }.tree-two { left: 28%; bottom: 14%; font-size: 11rem; }.tree-three { right: 6%; bottom: 8%; font-size: 15rem; }
-.about-initial { position: absolute; z-index: 3; left: 50%; bottom: 5%; color: rgba(255,255,255,.78); font-family: "Fraunces", serif; font-size: 14rem; line-height: 1; transform: translateX(-50%); }
+.about-initial { position: absolute; z-index: 3; left: 50%; bottom: 10%; width: 9rem; height: 13rem; border: .7rem solid rgba(255,255,255,.7); border-radius: 80% 12% 75% 20%; transform: translateX(-50%) rotate(38deg); }
+.about-initial::after { content: ""; position: absolute; left: 50%; bottom: -2.2rem; width: .55rem; height: 13rem; border-radius: 999px; background: rgba(255,255,255,.7); transform: rotate(-7deg); transform-origin: bottom; }
 .about-copy { padding: clamp(3rem, 7vw, 7rem); }
 .about-copy h2 { margin-bottom: 2rem; }
 .about-copy p { color: #526158; line-height: 1.75; }
