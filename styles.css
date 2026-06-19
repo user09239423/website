@@ -82,8 +82,18 @@ h2 { margin-bottom: 0; font-size: clamp(3rem, 6.2vw, 6rem); line-height: .94; }
 .about-card { display: grid; grid-template-columns: .9fr 1.1fr; max-width: 1200px; margin: auto; overflow: hidden; background: var(--paper); box-shadow: 0 30px 70px rgba(25,51,41,.12); }
 .about-art { position: relative; min-height: 600px; overflow: hidden; background: #adc0a4 url("assets/neighborhood-about.webp") center / cover no-repeat; }
 .about-art::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(16,44,29,.52), transparent 62%); }
-.about-initial { position: absolute; z-index: 3; left: 50%; bottom: 10%; width: 9rem; height: 13rem; border: .7rem solid rgba(255,255,255,.7); border-radius: 80% 12% 75% 20%; transform: translateX(-50%) rotate(38deg); }
-.about-initial::after { content: ""; position: absolute; left: 50%; bottom: -2.2rem; width: .55rem; height: 13rem; border-radius: 999px; background: rgba(255,255,255,.7); transform: rotate(-7deg); transform-origin: bottom; }
+.yard-helper { position: absolute; z-index: 3; right: 2%; bottom: 0; width: min(76%, 380px); height: auto; overflow: visible; color: #102c1d; filter: drop-shadow(0 10px 8px rgba(0,0,0,.2)); opacity: .82; }
+.yard-helper .boy-shadow, .yard-helper .leaf-pile { fill: currentColor; }
+.yard-helper .raking-arm, .yard-helper .rake-shadow { fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; }
+.yard-helper .raking-arm { stroke-width: 18; transform-origin: 130px 154px; animation: reach-for-leaves 2.8s ease-in-out infinite; }
+.yard-helper .rake-shadow { stroke-width: 7; transform-origin: 178px 199px; animation: rake-sweep 2.8s ease-in-out infinite; }
+.yard-helper .boy-shadow { transform-origin: 115px 324px; animation: bend-to-work 2.8s ease-in-out infinite; }
+.yard-helper .drifting-leaves { fill: #d6a84f; animation: leaves-gather 2.8s ease-in-out infinite; }
+
+@keyframes bend-to-work { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(7deg) translate(4px, 1px); } }
+@keyframes reach-for-leaves { 0%, 100% { transform: rotate(-4deg); } 50% { transform: rotate(9deg); } }
+@keyframes rake-sweep { 0%, 100% { transform: rotate(-7deg); } 50% { transform: rotate(8deg) translate(7px, -1px); } }
+@keyframes leaves-gather { 0%, 100% { transform: translate(0, 0) rotate(0deg); opacity: .95; } 50% { transform: translate(-13px, 5px) rotate(-7deg); opacity: .72; } }
 .about-copy { padding: clamp(3rem, 7vw, 7rem); }
 .about-copy h2 { margin-bottom: 2rem; }
 .about-copy p { color: #526158; line-height: 1.75; }
@@ -165,4 +175,7 @@ footer { display: grid; grid-template-columns: 1fr auto auto; gap: 2rem; align-i
   .contact-row { grid-template-columns: 1fr; gap: .5rem; }
 }
 
-@media (prefers-reduced-motion: reduce) { :root { scroll-behavior: auto; } }
+@media (prefers-reduced-motion: reduce) {
+  :root { scroll-behavior: auto; }
+  .yard-helper * { animation: none !important; }
+}
