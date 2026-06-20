@@ -34,9 +34,7 @@ a { color: inherit; }
 
 .brand { display: inline-flex; align-items: center; gap: .7rem; font-weight: 700; text-decoration: none; }
 .brand small { margin-left: .25rem; color: #d6dfcf; font-size: .62em; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; }
-.brand-mark { position: relative; display: grid; place-items: center; width: 2.2rem; height: 2.2rem; border: 1px solid currentColor; border-radius: 50%; }
-.brand-mark::before { content: ""; width: .72rem; height: 1rem; border: 1.5px solid currentColor; border-radius: 75% 15% 70% 25%; transform: rotate(38deg); }
-.brand-mark::after { content: ""; position: absolute; width: 1px; height: .9rem; background: currentColor; transform: rotate(38deg) translate(.05rem, .1rem); transform-origin: bottom; }
+.brand-logo { flex: 0 0 auto; width: 2.55rem; height: 2.55rem; overflow: visible; filter: drop-shadow(0 2px 3px rgba(0,0,0,.14)); }
 nav { display: flex; align-items: center; gap: clamp(1rem, 3vw, 2.25rem); }
 nav a { font-size: .9rem; font-weight: 600; text-decoration: none; }
 .nav-cta { padding: .65rem 1rem; border: 1px solid rgba(255,255,255,.55); border-radius: 999px; }
