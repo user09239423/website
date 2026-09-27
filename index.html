@@ -13,7 +13,7 @@
       min-height: 100svh;
       display: grid;
       place-items: center;
-      overflow: hidden;
+      overflow-x: hidden;
       color: #f6faf9;
       background:
         radial-gradient(ellipse at 50% 100%, rgba(32, 144, 161, .43), transparent 52%),
@@ -30,17 +30,17 @@
     }
     body::before { background: rgba(87, 202, 204, .12); transform: rotate(-5deg); }
     body::after { background: rgba(4, 32, 59, .24); transform: rotate(6deg) translateY(7vh); }
-    main { position: relative; z-index: 1; padding: 2rem; text-align: center; }
-    .logo { display: block; width: min(76vw, 470px); height: auto; margin: 0 auto 1.5rem; filter: drop-shadow(0 16px 35px rgba(0, 0, 0, .32)); }
-    h1 { margin: 0; max-width: 18ch; font-size: clamp(3rem, 9vw, 7.5rem); font-weight: 400; line-height: 1.05; letter-spacing: -.045em; text-wrap: balance; }
+    main { position: relative; z-index: 1; min-height: 100svh; display: flex; flex-direction: column; align-items: center; padding: 2rem; text-align: center; }
+    .logo { display: block; width: min(55vw, 300px); height: auto; margin: auto auto 0; filter: drop-shadow(0 16px 35px rgba(0, 0, 0, .32)); }
+    h1 { margin: auto 0 0; max-width: 18ch; font-size: clamp(3rem, 9vw, 7.5rem); font-weight: 400; line-height: 1.05; letter-spacing: -.045em; text-wrap: balance; }
     .rule { width: 5rem; height: 1px; margin: 2.5rem auto 0; background: #a4dfd9; opacity: .85; }
   </style>
 </head>
 <body>
   <main>
-    <img class="logo" src="assets/poseidons-prints-logo.webp" alt="Poseidon’s Prints logo" width="760" height="760">
     <h1>Coming from the ocean soon</h1>
     <div class="rule" aria-hidden="true"></div>
+    <img class="logo" src="assets/poseidons-prints-logo.webp" alt="Poseidon’s Prints logo" width="760" height="760">
   </main>
 </body>
 </html>
