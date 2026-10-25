@@ -17,7 +17,8 @@
     .brand { font-size:1.3rem; text-decoration:none; color:var(--gold); letter-spacing:.02em; }
     .nav { text-decoration:none; color:var(--silver); font-size:.95rem; }
     .nav:hover { color:var(--cream); }
-    .hero { padding:78px 0 62px; max-width:800px; }
+    .hero { padding:78px 0 62px; display:grid; grid-template-columns:minmax(0,2fr) minmax(0,1fr); align-items:center; gap:42px; }
+    .hero-copy { min-width:0; }
     .eyebrow { margin:0 0 22px; color:var(--gold); font-size:.8rem; letter-spacing:.19em; text-transform:uppercase; }
     h1 { margin:0; max-width:17ch; font-size:clamp(3.1rem,6.8vw,6rem); font-weight:400; line-height:1.04; letter-spacing:-.045em; text-wrap:balance; }
     .intro { margin:26px 0 0; max-width:560px; font-size:1.15rem; line-height:1.65; color:var(--silver); }
@@ -42,10 +43,10 @@
     footer { position:relative; text-align:center; padding:80px 24px 40px; overflow:hidden; }
     footer::before { content:''; position:absolute; width:140%; height:210px; left:-20%; bottom:-150px; background:rgba(87,202,204,.12); border-radius:50% 50% 0 0; transform:rotate(-4deg); pointer-events:none; }
     .rule { width:80px; height:1px; margin:0 auto 32px; background:var(--aqua); opacity:.8; }
-    .logo { display:block; width:min(55vw,280px); height:auto; margin:auto; filter:drop-shadow(0 16px 35px rgba(0,0,0,.32)); }
+    .logo { display:block; width:100%; max-width:360px; height:auto; margin:auto; filter:drop-shadow(0 16px 35px rgba(0,0,0,.32)); }
     footer p { margin:24px 0 0; color:var(--silver); font-size:.85rem; }
     a:focus-visible { outline:2px solid var(--gold); outline-offset:6px; }
-    @media(max-width:900px) { .grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+    @media(max-width:900px) { .hero { grid-template-columns:1fr; gap:32px; } .logo { width:min(65vw,300px); } .grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
     @media(max-width:580px) { .wrap { width:calc(100% - 36px); } header { padding-block:22px; } .brand { font-size:1.1rem; } .hero { padding:54px 0 44px; } .intro { font-size:1.05rem; } .grid { grid-template-columns:1fr; gap:22px; } .product-copy { padding:23px; } .collection-top { align-items:center; } .collection-top h2 { font-size:1.1rem; } .collection-top p { font-size:.8rem; } footer { padding-top:60px; } }
     @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
   </style>
@@ -54,9 +55,12 @@
   <header class="wrap"><a class="brand" href="#top">Poseidon’s Prints</a><a class="nav" href="#collection">The collection ↓</a></header>
   <main id="top" class="wrap">
     <section class="hero" aria-labelledby="heading">
+      <div class="hero-copy">
       <p class="eyebrow">Small prints. Big adventures.</p>
       <h1 id="heading">Treasures from<br>Poseidon’s Prints.</h1>
       <p class="intro">Check out my 3D printed creations! Find a new desk buddy, a twisty fidget, or a special gift for someone awesome.</p>
+      </div>
+      <img class="logo" src="assets/poseidons-prints-logo.webp" alt="Poseidon’s Prints logo" width="760" height="760">
     </section>
     <section id="collection" aria-labelledby="collection-heading">
       <div class="collection-top"><h2 id="collection-heading">Explore the collection</h2><p>11 creations &amp; bundles</p></div>
@@ -174,6 +178,6 @@
       </div>
     </section>
   </main>
-  <footer><div class="rule" aria-hidden="true"></div><img class="logo" src="assets/poseidons-prints-logo.webp" alt="Poseidon’s Prints logo" width="760" height="760"><p>Made with imagination. Printed by Jude.</p></footer>
+  <footer><div class="rule" aria-hidden="true"></div><p>Made with imagination. Printed by Jude.</p></footer>
 </body>
 </html>
