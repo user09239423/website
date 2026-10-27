@@ -1,0 +1,102 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#071c34"><title>Order | Poseidon’s Prints</title><style>
+    :root { color-scheme: dark; --navy:#071c34; --cream:#f6faf9; --silver:#b4cedb; --aqua:#82dadd; --gold:#e9bc69; }
+    *,*::before,*::after { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--cream); background:radial-gradient(ellipse at 90% 8%,rgba(32,144,161,.22),transparent 38%),linear-gradient(165deg,#071c34 0%,#0a3551 56%,#0e697a 100%); font-family:Georgia,'Times New Roman',serif; }
+    a { color:inherit; }
+    .wrap { width:min(1200px,calc(100% - 64px)); margin-inline:auto; }
+    header { display:flex; align-items:center; justify-content:space-between; gap:24px; padding-block:28px; border-bottom:1px solid rgba(180,206,219,.2); }
+    .brand { font-size:1.3rem; text-decoration:none; color:var(--gold); letter-spacing:.02em; }
+    .nav { text-decoration:none; color:var(--silver); font-size:.95rem; }
+    .nav:hover { color:var(--cream); }
+    .hero { padding:78px 0 62px; display:grid; grid-template-columns:minmax(0,2fr) minmax(0,1fr); align-items:center; gap:42px; }
+    .hero-copy { min-width:0; }
+    .eyebrow { margin:0 0 22px; color:var(--gold); font-size:.8rem; letter-spacing:.19em; text-transform:uppercase; }
+    h1 { margin:0; max-width:17ch; font-size:clamp(3.1rem,6.8vw,6rem); font-weight:400; line-height:1.04; letter-spacing:-.045em; text-wrap:balance; }
+    .intro { margin:26px 0 0; max-width:560px; font-size:1.15rem; line-height:1.65; color:var(--silver); }
+    .collection-top { display:flex; justify-content:space-between; align-items:baseline; gap:16px; padding:22px 0; border-top:1px solid rgba(180,206,219,.25); }
+    .collection-top h2 { margin:0; font-size:1.25rem; font-weight:400; }
+    .collection-top p { margin:0; color:var(--silver); font-size:.9rem; }
+    .category-nav { display:flex; flex-wrap:wrap; gap:10px; margin:4px 0 38px; }
+    .category-nav a { padding:10px 17px; border:1px solid rgba(130,218,221,.35); border-radius:3px; color:var(--aqua); text-decoration:none; font-size:.95rem; }
+    .category-nav a:hover { color:var(--gold); border-color:var(--gold); }
+    .return-collection { display:inline-flex; align-items:center; justify-content:center; min-height:44px; margin-top:24px; padding:11px 18px; border:1px solid rgba(130,218,221,.45); border-radius:3px; color:var(--aqua); background:rgba(4,24,43,.4); text-decoration:none; font-size:.95rem; }
+    .return-collection:hover { color:var(--gold); border-color:var(--gold); }
+    .return-collection:focus-visible { outline:2px solid var(--gold); outline-offset:4px; }
+    .category-section { margin-bottom:48px; scroll-margin-top:24px; }
+    .category-heading { display:flex; align-items:baseline; justify-content:space-between; gap:16px; margin-bottom:20px; padding-top:22px; border-top:1px solid rgba(180,206,219,.2); }
+    .category-heading h2 { margin:0; color:var(--gold); font-size:clamp(1.7rem,3vw,2.2rem); font-weight:400; }
+    .category-heading span { color:var(--silver); font-size:.85rem; }
+    .grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:26px; }
+    .product { min-width:0; display:flex; flex-direction:column; border:1px solid rgba(180,206,219,.22); background:rgba(4,24,43,.6); border-radius:7px; overflow:hidden; }
+    .product-photo { aspect-ratio:4/3; position:relative; display:grid; place-items:center; background:radial-gradient(ellipse at 50% 100%,rgba(33,124,149,.24),transparent 70%),#081f35; border-bottom:1px solid rgba(180,206,219,.16); }
+    .product-photo>div { display:flex; flex-direction:column; align-items:center; gap:13px; color:var(--silver); opacity:.78; }
+    .product-photo svg { width:44px; height:44px; color:var(--aqua); }
+    .product-photo span { font-size:.9rem; }
+    .badge { position:absolute; top:16px; left:16px; padding:6px 11px; border:1px solid rgba(233,188,105,.5); border-radius:2px; color:var(--gold); font-size:.72rem!important; letter-spacing:.08em; text-transform:uppercase; }
+    .product-image { display:block; width:100%; height:100%; min-height:0; object-fit:contain; }
+    .product-photo:has(.product-image) { overflow:hidden; }
+    .photo-options { display:flex; gap:8px; padding:12px; background:rgba(4,24,43,.35); border-bottom:1px solid rgba(180,206,219,.16); }
+    .photo-option { width:64px; height:48px; padding:0; overflow:hidden; border:1px solid rgba(180,206,219,.35); border-radius:3px; background:var(--navy); cursor:pointer; }
+    .photo-option img { display:block; width:100%; height:100%; object-fit:contain; }
+    .photo-option[aria-pressed="true"] { border:2px solid var(--gold); }
+    .photo-option:focus-visible { outline:2px solid var(--aqua); outline-offset:3px; }
+    .product-copy { display:flex; flex-direction:column; flex:1; padding:24px; }
+    .finish { margin:0 0 10px; font-size:.76rem; line-height:1.4; color:var(--aqua); letter-spacing:.04em; }
+    .product h3 { margin:0; font-weight:400; font-size:1.6rem; line-height:1.18; letter-spacing:-.02em; }
+    .description { margin:16px 0 25px; color:var(--silver); font-size:1rem; line-height:1.65; }
+    .price-line { margin-top:auto; display:flex; align-items:baseline; gap:10px; padding-top:18px; border-top:1px solid rgba(180,206,219,.15); }
+    .price { color:var(--gold); font-size:1.9rem; }
+    .unit { color:var(--silver); font-size:.85rem; }
+    .pending { color:var(--gold); font-size:1rem; line-height:2.1; }
+    footer { position:relative; text-align:center; padding:80px 24px 40px; overflow:hidden; }
+    footer::before { content:''; position:absolute; width:140%; height:210px; left:-20%; bottom:-150px; background:rgba(87,202,204,.12); border-radius:50% 50% 0 0; transform:rotate(-4deg); pointer-events:none; }
+    .rule { width:80px; height:1px; margin:0 auto 32px; background:var(--aqua); opacity:.8; }
+    .logo { display:block; width:100%; max-width:360px; height:auto; margin:auto; filter:drop-shadow(0 16px 35px rgba(0,0,0,.32)); }
+    footer p { margin:24px 0 0; color:var(--silver); font-size:.85rem; }
+    a:focus-visible { outline:2px solid var(--gold); outline-offset:6px; }
+    @media(max-width:900px) { .hero { grid-template-columns:1fr; gap:32px; } .logo { width:min(65vw,300px); } .grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+    @media(max-width:580px) { .wrap { width:calc(100% - 36px); } header { padding-block:22px; } .brand { font-size:1.1rem; } .hero { padding:54px 0 44px; } .intro { font-size:1.05rem; } .grid { grid-template-columns:1fr; gap:22px; } .product-copy { padding:23px; } .collection-top { align-items:center; } .collection-top h2 { font-size:1.1rem; } .collection-top p { font-size:.8rem; } footer { padding-top:60px; } }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+  
+body { min-height:100vh; }
+.detail-main { padding-top:30px; }
+.breadcrumbs { display:flex; flex-wrap:wrap; gap:10px; color:var(--silver); font-size:.95rem; line-height:1.6; }
+.breadcrumbs a { text-decoration:none; }
+.breadcrumbs a:hover { color:var(--gold); }
+.detail-product { display:grid; grid-template-columns:minmax(0,1.25fr) minmax(0,1fr); align-items:start; gap:48px; margin-top:35px; }
+.detail-product .product-gallery { border:1px solid rgba(180,206,219,.22); border-radius:7px; overflow:hidden; }
+.detail-product .product-copy { padding:12px 0; }
+.detail-product h1 { max-width:none; font-size:clamp(2.4rem,4.5vw,4rem); line-height:1.12; }
+.detail-product .description { font-size:1.15rem; }
+.detail-product .price-line { margin-top:12px; }
+.detail-product .price { font-size:2.4rem; }
+.detail-product .return-collection { align-self:flex-start; margin-top:30px; }
+.header-logo { width:54px; height:54px; object-fit:contain; }
+.detail-brand { display:flex; gap:12px; align-items:center; }
+@media(max-width:760px) { .detail-product { grid-template-columns:1fr; gap:24px; } .detail-product .product-copy { padding:0; } .header-logo { width:40px; height:40px; } header { gap:12px; } }
+.order-now { display:inline-flex; align-items:center; justify-content:center; align-self:flex-start; min-height:48px; margin-top:26px; padding:13px 28px; border:1px solid var(--gold); border-radius:4px; background:var(--gold); color:var(--navy); font:inherit; font-weight:bold; text-decoration:none; } .order-now:hover { background:#f4d395; }
+.order-wrap { max-width:840px; padding-block:40px; } .order-wrap h1 { font-size:clamp(2.5rem,6vw,4rem); max-width:none; } .order-wrap .intro { margin-bottom:30px; }
+.order-form { padding:clamp(20px,4vw,36px); background:rgba(4,24,43,.65); border:1px solid rgba(180,206,219,.3); border-radius:7px; }
+.fields { display:grid; grid-template-columns:1fr 1fr; gap:22px; } .field { display:flex; flex-direction:column; gap:9px; } .full { grid-column:1/-1; }
+label { color:var(--cream); } input,select,textarea { width:100%; min-height:48px; padding:12px; background:var(--navy); color:var(--cream); border:1px solid var(--silver); border-radius:4px; font:inherit; font-size:1rem; } textarea { resize:vertical; } input:focus-visible,select:focus-visible,textarea:focus-visible,button:focus-visible { outline:2px solid var(--gold); outline-offset:3px; }
+.summary { display:flex; gap:18px; align-items:center; margin:24px 0; padding:18px; border:1px solid rgba(180,206,219,.25); border-radius:4px; } .summary img { width:110px; height:83px; object-fit:contain; } .summary p { margin:6px 0; } .help { color:var(--silver); line-height:1.6; font-size:.95rem; } .total { color:var(--gold); font-size:1.5rem; } .order-now { cursor:pointer; margin-top:6px; } #status { line-height:1.6; color:var(--gold); } @media(max-width:580px) { .fields { grid-template-columns:1fr; } .summary { flex-wrap:wrap; } }
+</style></head><body><header class="wrap"><a class="brand detail-brand" href="index.html"><img class="header-logo" src="assets/poseidons-prints-logo.webp" alt="" width="54" height="54">Poseidon’s Prints</a><a class="nav" href="index.html#collection">The collection</a></header><main class="wrap order-wrap"><p class="eyebrow">Made by Jude. Picked by you.</p><h1>Order your ocean treasure</h1><p class="intro">Choose your item and tell us how to reach you.</p><form class="order-form" id="order-form"><div class="fields">
+<div class="field full"><label for="item">Item</label><select id="item" name="item" required><option value="gengar">Gengar — $1</option><option value="bulbasaur">Bulbasaur — $2</option><option value="charmander">Charmander — $3</option><option value="pokemon-trio">Pokémon trio — $5</option><option value="cone-passthrough-fidget">Ultimate Cone Passthrough Fidget — $4</option><option value="shark-keychain">Articulated shark keychain — $2</option><option value="axolotl-keychain">Articulated axolotl keychain — $3</option><option value="3-pack-fidgets">3-pack fidgets — $9</option><option value="monogram-japandi-coasters">Custom Monogram Japandi Coasters — $15</option><option value="nativity-ornament">Nativity Ornament — $5</option><option value="finger-armor-transformer">Finger Armor Transformer — $5</option></select></div>
+<div class="field"><label for="quantity">Quantity</label><input id="quantity" name="quantity" type="number" min="1" max="99" step="1" value="1" required><span class="help">For sets and packs, enter the number of sets or packs.</span></div>
+<div class="field"><label for="customer">Your name</label><input id="customer" name="customer" autocomplete="name" maxlength="100" required></div>
+<div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" maxlength="200" required></div>
+<div class="field"><label for="phone">Phone (optional)</label><input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="40"></div>
+<div class="field full"><label for="notes">Colors, initials, or other requests (optional)</label><textarea id="notes" name="notes" rows="4" maxlength="1500" placeholder="For custom coasters, include the initials you would like."></textarea></div></div>
+<div class="summary"><img id="item-image" alt="" width="110" height="83"><div><p id="item-name"></p><p class="total" id="total" aria-live="polite"></p></div></div>
+<p class="help" id="send-help">This opens your email app with your order filled in. Send the email to request your order. Payment and pickup details will be confirmed by email.</p>
+<button class="order-now" type="submit" aria-describedby="send-help">Email my order</button><p id="status" role="status"></p><noscript><p>Please enable JavaScript to calculate and email your order.</p></noscript></form><a class="return-collection" href="index.html#collection">← Return to collection</a></main><footer><div class="rule"></div><p>Made with imagination. Printed by Jude.</p></footer><script>
+const products=[{"slug":"gengar","name":"Gengar","price":1,"image":"assets/products/gengar-website.webp"},{"slug":"bulbasaur","name":"Bulbasaur","price":2,"image":"assets/products/bulbasaur-website.webp"},{"slug":"charmander","name":"Charmander","price":3,"image":"assets/products/charmander-side.webp"},{"slug":"pokemon-trio","name":"Pokémon trio","price":5,"image":"assets/products/pokemon-trio.webp"},{"slug":"cone-passthrough-fidget","name":"Ultimate Cone Passthrough Fidget","price":4,"image":"assets/products/cone-fidget-dark.webp"},{"slug":"shark-keychain","name":"Articulated shark keychain","price":2,"image":"assets/products/shark-keychain-website.webp"},{"slug":"axolotl-keychain","name":"Articulated axolotl keychain","price":3,"image":"assets/products/axolotl-website.webp"},{"slug":"3-pack-fidgets","name":"3-pack fidgets","price":9,"image":"assets/products/3-pack-fidgets.webp"},{"slug":"monogram-japandi-coasters","name":"Custom Monogram Japandi Coasters","price":15,"image":"assets/products/monogram-coasters-website.webp"},{"slug":"nativity-ornament","name":"Nativity Ornament","price":5,"image":"assets/products/nativity-ornament-orange-gold.webp"},{"slug":"finger-armor-transformer","name":"Finger Armor Transformer","price":5,"image":"assets/products/finger-transformer-three-views.webp"}];
+const orderEmail="aforgingflower@gmail.com";
+const item=document.getElementById('item'),quantity=document.getElementById('quantity'),form=document.getElementById('order-form');
+const selected=new URLSearchParams(location.search).get('item');if(products.some(p=>p.slug===selected))item.value=selected;
+function updateSummary(){const p=products.find(p=>p.slug===item.value);const q=Number(quantity.value);document.getElementById('item-image').src=p.image;document.getElementById('item-name').textContent=p.name;document.getElementById('total').textContent=Number.isInteger(q)&&q>=1&&q<=99?'Item total: $'+(p.price*q).toFixed(2):'Enter a quantity from 1 to 99';}
+item.addEventListener('change',updateSummary);quantity.addEventListener('input',updateSummary);updateSummary();
+form.addEventListener('submit',e=>{e.preventDefault();if(!form.reportValidity())return;const p=products.find(p=>p.slug===item.value);const q=Number(quantity.value);const customer=document.getElementById('customer').value.trim();if(!customer){document.getElementById('customer').setCustomValidity('Please enter your name.');document.getElementById('customer').reportValidity();return;}const body=['Poseidon’s Prints order request','', 'Item: '+p.name,'Quantity: '+q,'Item total: $'+(p.price*q).toFixed(2),'','Name: '+customer,'Email: '+document.getElementById('email').value.trim(),'Phone: '+document.getElementById('phone').value.trim(),'Requests: '+document.getElementById('notes').value.trim()].join('\n');location.href='mailto:'+orderEmail+'?subject='+encodeURIComponent('Order request: '+p.name)+'&body='+encodeURIComponent(body);document.getElementById('status').textContent='Send the prepared email from your email app to request your order. If it did not open, check that an email app is set up on your device.';});
+document.getElementById('customer').addEventListener('input',e=>e.target.setCustomValidity(''));
+</script></body></html>

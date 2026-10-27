@@ -76,7 +76,7 @@ body { min-height:100vh; }
 .header-logo { width:54px; height:54px; object-fit:contain; }
 .detail-brand { display:flex; gap:12px; align-items:center; }
 @media(max-width:760px) { .detail-product { grid-template-columns:1fr; gap:24px; } .detail-product .product-copy { padding:0; } .header-logo { width:40px; height:40px; } header { gap:12px; } }
-</style></head><body><header class="wrap"><a class="brand detail-brand" href="index.html"><img class="header-logo" src="assets/poseidons-prints-logo.webp" alt="" width="54" height="54">Poseidon’s Prints</a><a class="nav" href="index.html#collection">The collection</a></header>
+.order-now { display:inline-flex; align-items:center; justify-content:center; align-self:flex-start; min-height:48px; margin-top:26px; padding:13px 28px; border:1px solid var(--gold); border-radius:4px; background:var(--gold); color:var(--navy); font:inherit; font-weight:bold; text-decoration:none; } .order-now:hover { background:#f4d395; }</style></head><body><header class="wrap"><a class="brand detail-brand" href="index.html"><img class="header-logo" src="assets/poseidons-prints-logo.webp" alt="" width="54" height="54">Poseidon’s Prints</a><a class="nav" href="index.html#collection">The collection</a></header>
 <main class="wrap detail-main"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="index.html#collection">Collection</a><span aria-hidden="true">/</span><a href="index.html#pokemon">Pokémon</a><span aria-hidden="true">/</span><span aria-current="page">Bulbasaur</span></nav>
 <article class="detail-product" aria-labelledby="product-heading">
         <div class="product-gallery"><div class="product-photo"><img class="product-image" src="assets/products/bulbasaur-website.webp" alt="Green Bulbasaur figurine on a navy background" width="1200" height="900" loading="eager" decoding="async"></div></div>
@@ -86,7 +86,7 @@ body { min-height:100vh; }
           <h1 id="product-heading">Bulbasaur</h1>
           <p class="description">Bring home a little grass-type buddy! This Bulbasaur glows green in the dark and looks awesome hanging out on your desk.</p>
           <div class="price-line"><span class="price">$2</span><span class="unit">Each</span></div>
-        <a class="return-collection" href="index.html#item-2">← Return to collection</a></div></article></main><footer><div class="rule" aria-hidden="true"></div><p>Made with imagination. Printed by Jude.</p></footer><script>
+        <a class="order-now" href="order.html?item=bulbasaur">Order Now</a><a class="return-collection" href="index.html#item-2">← Return to collection</a></div></article></main><footer><div class="rule" aria-hidden="true"></div><p>Made with imagination. Printed by Jude.</p></footer><script>
     document.querySelectorAll('.photo-option').forEach(button => {
       button.addEventListener('click', () => {
         const gallery = button.closest('.product-gallery');
